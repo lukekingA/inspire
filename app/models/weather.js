@@ -1,12 +1,39 @@
+//private
+
+function ktof(kel) {
+  return ((kel - 273.15) * (9 / 5)) + 32
+}
+
+function ktoc(kel) {
+  return kel - 273.15
+}
+
+//public
 export default class Weather {
   constructor(data) {
-    console.log('[RAW WEATHER API DATA]', data);
-
+    console.log('[RAW WEATHER API DATA]', data)
+    //this.condition = data.weather[0].main
+    this.celsius = ktoc(data.main.temp).toFixed(0)
+    this.fahren = ktof(data.main.temp).toFixed(0)
+    this.city = data.name
+    this.kelvin = data.main.temp
     // HEY FUN FACT 
     // Have you ever wanted to know the temperature measured in kelvin? That is what this data returns!
     // data.main.temp is the temperature in Kelvin
     // You should probably convert the temperature data to either F or C
-    this.city = data.name
-    this.kelvin = data.main.temp
   }
+
+  get WTemplate() {
+    return `
+<div class="text-light txt-shadow">
+	<div class="d-flex">
+		<h4 class="mr-2">${this.fahren} <sup>F</sup></h4>
+		<h4>${this.celsius} <sup>C</sup></h4>
+	</div>
+	<div>
+		<p>${this.city}</p>
+	</div>
+</div>`
+  }
+
 }
