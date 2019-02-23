@@ -11,7 +11,7 @@ let dateDict = {
 export default class MyDate {
   constructor(data) {
     this.month = dateDict.month[data.month]
-    this.weekday = dateDict.weekDay[data.day]
+    this.weekday = dateDict.weekDay[data.weekday]
     this.day = data.day
     this.year = data.year
   }

@@ -1,8 +1,8 @@
 import MyDate from "../../models/myDate.js";
-
+import MyTime from "../../models/myTime.js"
 //private
 let _state = {
-  time: '',
+  time: {},
   date: {}
 }
 
@@ -29,32 +29,33 @@ export default class ClockService {
     return _state.time
   }
 
-  get Date() {
+  get DDate() {
     return _state.date
   }
 
   getTheTime() {
-    let start = new Date()
-    console.log('starting clock')
-    let formatTime = `${start.getHours()}:${start.getMinutes()}`
     let runningClock = setInterval(() => {
+      let start = new Date()
+      let time = {
+        hour: start.getHours(),
+        minutes: start.getMinutes()
+      }
+      let formatTime = new MyTime(time)
       setState('time', formatTime)
-    }, 60000)
+    }, 1000)
   }
 
   getTheDate() {
-    let start = new Date()
-    console.log('starting date clock')
-    let dateData = {
-      month: start.getMonth(),
-      weekday: start.getDay(),
-      day: start.getDate(),
-      year: start.getFullYear()
-    }
-    let formatDate = new MyDate(dateData)
-
     let runningDate = setInterval(() => {
-      setState('time', formatDate)
-    }, 60000)
+      let start = new Date()
+      let dateData = {
+        month: start.getMonth(),
+        weekday: start.getDay(),
+        day: start.getDate(),
+        year: start.getFullYear()
+      }
+      let formatDate = new MyDate(dateData)
+      setState('date', formatDate)
+    }, 1000)
   }
 }
