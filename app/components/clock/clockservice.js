@@ -3,12 +3,14 @@ import MyTime from "../../models/myTime.js"
 //private
 let _state = {
   time: {},
-  date: {}
+  date: {},
+  milTime: true
 }
 
 let _subscribers = {
   time: [],
-  date: []
+  date: [],
+  milTime: []
 }
 
 function setState(prop, val) {
@@ -22,6 +24,7 @@ function setState(prop, val) {
 //public
 export default class ClockService {
   addsubscriber(prop, fn) {
+
     _subscribers[prop].push(fn)
   }
 
@@ -31,6 +34,11 @@ export default class ClockService {
 
   get DDate() {
     return _state.date
+  }
+
+  get MilTime() {
+
+    return _state.milTime
   }
 
   getTheTime() {
@@ -57,5 +65,9 @@ export default class ClockService {
       let formatDate = new MyDate(dateData)
       setState('date', formatDate)
     }, 1000)
+  }
+
+  milTime(val = false) {
+    setState('milTime', val)
   }
 }
