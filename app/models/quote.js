@@ -1,16 +1,24 @@
+function capitalize(str) {
+  let words = str.split('-')
+  return words.map(w => {
+    return w.charAt(0).toUpperCase() + w.slice(1)
+  }).join(' ')
+}
+
 export default class Quote {
   constructor(data) {
     this.url = data.url
     this.body = data.body
-    this.author_permalink = data.author_permalink
+    this.author_permalink = capitalize(data.author_permalink)
   }
 
   get QuoteTemplate() {
     return `
-    <div class="text-light txt-shadow ">
+    <div class="text-light txt-shadow d-flex flex-column justify-content-end" data-toggle="tooltip" data-placement="top" title="${this.author_permalink}">
     <p>${this.body}</p>
-    <p>${this.author_permalink}</p>
     </div> `
   }
 
+} {
+  /* <p class="text-capitalize">${this.author_permalink}</p> */
 }

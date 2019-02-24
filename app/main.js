@@ -4,6 +4,8 @@ import ImageController from "./components/image/image-controller.js";
 import QuoteController from "./components/quote/quote-controller.js";
 import ClockController from "./components/clock/clockController.js";
 
+
+// 
 // HEY WHERE ARE ALL OF YOUR CONTROLLERS??
 class App {
   constructor() {

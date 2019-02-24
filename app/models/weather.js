@@ -25,13 +25,13 @@ export default class Weather {
 
   get WTemplate() {
     return `
-<div class="text-light txt-shadow">
+<div class="text-light txt-shadow bg-dk-transparent d-inline-block rounded shadow p-3">
 	<div class="d-flex">
 		<h4 class="mr-2">${this.fahren} <sup>F</sup></h4>
-		<h4>${this.celsius} <sup>C</sup></h4>
+		<h5>${this.celsius} <sup>C</sup></h5>
 	</div>
 	<div>
-		<p>${this.city}</p>
+		<p class="mb-0">${this.city}</p>
 	</div>
 </div>`
   }
