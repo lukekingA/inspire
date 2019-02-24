@@ -4,7 +4,11 @@ import GreetingService from "./grettingService.js";
 let _gs = new GreetingService()
 
 function drawGreeting() {
-  document.querySelector('#greeting').innerHTML = `<h1 class="display-2 text-light txt-shadow">${_gs.Greeting} ${_gs.User}</h1>`
+  document.querySelector('#greeting').innerHTML = `
+  <div>
+  <h1 class="display-2 text-light txt-shadow">${_gs.Greeting}</h1>
+  <h1 class="text-light txt-shadow">${_gs.User}</h1>
+  </div>`
 
 }
 //public

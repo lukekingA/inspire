@@ -6,7 +6,7 @@ let _state = {
   greeting: {
     greeting: ''
   },
-  user: ''
+  user: 'Luke'
 }
 
 let _subscriber = {
@@ -40,7 +40,7 @@ export default class GreetingService {
       }
       let greeting = new Greeting(data)
       setState('greeting', greeting)
-    }, 1000)
+    }, 60000)
   }
 
   setUser(user = '') {
