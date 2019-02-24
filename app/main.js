@@ -3,6 +3,7 @@ import TodoController from "./components/todo/todo-controller.js";
 import ImageController from "./components/image/image-controller.js";
 import QuoteController from "./components/quote/quote-controller.js";
 import ClockController from "./components/clock/clockController.js";
+import GreetingController from "./components/greeting/greetingController.js";
 
 
 // 
@@ -14,7 +15,8 @@ class App {
       todoController: new TodoController(),
       imageController: new ImageController(),
       quoteController: new QuoteController(),
-      clockController: new ClockController()
+      clockController: new ClockController(),
+      greetingController: new GreetingController()
     }
   }
 }
