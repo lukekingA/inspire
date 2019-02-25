@@ -33,9 +33,15 @@ export default class GreetingService {
     return _state.user
   }
   setGreeting() {
-    setState('greeting', new Greeting(new Date().getHours()))
+    let d = new Date()
+    debugger
+    setState('greeting',
+      new Greeting(d.getHours())
+    )
     let runningClock = setInterval(() => {
-      setState('greeting', new Greeting(new Date().getHours()))
+      setState('greeting',
+        new Greeting(d.getHours())
+      )
     }, 600000)
   }
 
