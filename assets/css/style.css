@@ -11,6 +11,11 @@ li {
   list-style: none;
 }
 
+.overflow-auto {
+  max-height: 120px;
+  overflow: auto;
+}
+
 .task {
   width: 150px;
   overflow: hidden;

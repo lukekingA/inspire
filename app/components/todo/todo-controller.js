@@ -9,7 +9,7 @@ function _drawTodos() {
 	<div class="text-light txt-shadow bg-dk-transparent d-inline-block rounded shadow p-2">
 			<h3>Tasks</h3>
 			<p>You have ${_tds.Todos.length} tasks</p>
-			<ul class="pl-0">
+			<ul class="pl-0 overflow-auto">
 	`
 	_tds.Todos.forEach(td => template += td.TodoItem)
 
