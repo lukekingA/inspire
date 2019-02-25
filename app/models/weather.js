@@ -17,6 +17,8 @@ export default class Weather {
     this.fahren = ktof(data.main.temp).toFixed(0)
     this.city = data.name
     this.kelvin = data.main.temp
+    this.weather = data.weather[0].main
+    this.icon = data.weather[0].icon
     // HEY FUN FACT 
     // Have you ever wanted to know the temperature measured in kelvin? That is what this data returns!
     // data.main.temp is the temperature in Kelvin
@@ -30,7 +32,8 @@ export default class Weather {
 		<h4 class="mr-2">${this.fahren} <sup>F</sup></h4>
 		<h5>${this.celsius} <sup>C</sup></h5>
 	</div>
-	<div>
+  <div>
+    <p class="mb-0">${this.weather}  <img src="http://openweathermap.org/img/w/${this.icon}.png" alt=""></p>
 		<p class="mb-0">${this.city}</p>
 	</div>
 </div>`

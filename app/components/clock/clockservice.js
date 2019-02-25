@@ -4,7 +4,7 @@ import MyTime from "../../models/myTime.js"
 let _state = {
   time: {},
   date: {},
-  milTime: true
+  milTime: 0
 }
 
 let _subscribers = {
@@ -67,7 +67,7 @@ export default class ClockService {
     }, 1000)
   }
 
-  milTime(val = false) {
+  milTime(val = '') {
     setState('milTime', val)
   }
 }
