@@ -10,6 +10,11 @@ function drawGreeting() {
   <h1 class="text-light txt-shadow">${_gs.User}</h1>
   </div>`
 
+  document.querySelector('#user').innerHTML = `
+  <form onkeydown="app.controllers.greetingController.setUser(event)">
+  <input class="rounded pl-1" type="text" placeholder="user name">
+  </form>
+  `
 }
 //public
 export default class GreetingController {
@@ -20,7 +25,10 @@ export default class GreetingController {
   }
 
   setUser(e) {
-    let user = e.target.value
-    _gs.setUser(user)
+    if (e.keyCode == 13) {
+      e.preventDefault()
+      let user = e.target.value
+      _gs.setUser(user)
+    }
   }
 }

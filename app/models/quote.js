@@ -14,11 +14,9 @@ export default class Quote {
 
   get QuoteTemplate() {
     return `
-    <div class="text-light txt-shadow d-flex flex-column justify-content-end" data-toggle="tooltip" data-placement="top" title="${this.author_permalink}">
-    <p>${this.body}</p>
+    <div class="text-light txt-shadow d-flex flex-column justify-content-end">
+    <p data-toggle="tooltip" data-placement="top" title="${this.author_permalink}">${this.body}</p>
     </div> `
   }
 
-} {
-  /* <p class="text-capitalize">${this.author_permalink}</p> */
 }

@@ -42,6 +42,11 @@ export default class ClockService {
   }
 
   getTheTime() {
+    setState('time', new MyTime({
+      hour: new Date().getHours(),
+      minutes: new Date().getMinutes()
+    }))
+
     let runningClock = setInterval(() => {
       let start = new Date()
       let time = {
@@ -50,10 +55,16 @@ export default class ClockService {
       }
       let formatTime = new MyTime(time)
       setState('time', formatTime)
-    }, 1000)
+    }, 20000)
   }
 
   getTheDate() {
+    setState('date', new MyDate({
+      month: new Date().getMonth(),
+      weekday: new Date().getDay(),
+      day: new Date().getDate(),
+      year: new Date().getFullYear()
+    }))
     let runningDate = setInterval(() => {
       let start = new Date()
       let dateData = {
@@ -64,7 +75,7 @@ export default class ClockService {
       }
       let formatDate = new MyDate(dateData)
       setState('date', formatDate)
-    }, 1000)
+    }, 60000)
   }
 
   milTime(val = '') {

@@ -16,7 +16,7 @@ export default class MyTime {
   }
 
   get TimeString() {
-    return `${this.hour - 12}:${this.minute} ${this.hour <= 12 ? 'AM': 'PM'}`
+    return `${this.hour > 12 ? this.hour - 12 : this.hour}:${this.minute} ${this.hour <= 12 ? 'AM': 'PM'}`
   }
 
   get MilTimeString() {

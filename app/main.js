@@ -4,6 +4,7 @@ import ImageController from "./components/image/image-controller.js";
 import QuoteController from "./components/quote/quote-controller.js";
 import ClockController from "./components/clock/clockController.js";
 import GreetingController from "./components/greeting/greetingController.js";
+import SettingsController from "./components/settings/settingsController.js";
 
 
 // 
@@ -16,7 +17,8 @@ class App {
       imageController: new ImageController(),
       quoteController: new QuoteController(),
       clockController: new ClockController(),
-      greetingController: new GreetingController()
+      greetingController: new GreetingController(),
+      settingsController: new SettingsController()
     }
   }
 }
