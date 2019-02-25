@@ -33,7 +33,7 @@ export default class Weather {
 		<h5>${this.celsius} <sup>C</sup></h5>
 	</div>
   <div>
-    <p class="mb-0">${this.weather}  <img src="http://openweathermap.org/img/w/${this.icon}.png" alt=""></p>
+    <p class="mb-0">${this.weather}  <img src="https://openweathermap.org/img/w/${this.icon}.png" alt=""></p>
 		<p class="mb-0">${this.city}</p>
 	</div>
 </div>`
