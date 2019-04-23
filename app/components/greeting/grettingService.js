@@ -34,7 +34,6 @@ export default class GreetingService {
   }
   setGreeting() {
     let d = new Date()
-    debugger
     setState('greeting',
       new Greeting(d.getHours())
     )
